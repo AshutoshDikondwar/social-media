@@ -14,7 +14,7 @@ const FriendListWidget = ({ userId }) => {
   
     const getFriends = async () => {
       const response = await fetch(
-        `https://connect-beta-three.vercel.app/users/${userId}/friends`,
+        `https://connect-rouge-nine.vercel.app/users/${userId}/friends`,
         {
           method: "GET",
           headers: { Authorization: `Bearer ${token}` },

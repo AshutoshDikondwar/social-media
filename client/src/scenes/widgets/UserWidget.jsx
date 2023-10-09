@@ -23,7 +23,7 @@ const UserWidget = ({ userId, picturePath }) => {
     const main = palette.neutral.main
 
     const getUser = async () => {
-        const response = await fetch(`https://connect-beta-three.vercel.app/users/${userId}`,
+        const response = await fetch(`https://connect-rouge-nine.vercel.app/users/${userId}`,
             {
                 method: "GET",
                 headers: { Authorization: `Bearer ${token}` }

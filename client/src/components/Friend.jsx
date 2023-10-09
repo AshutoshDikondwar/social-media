@@ -26,7 +26,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   const patchFriend = async () => {
     const response = await fetch(
-      `https://connect-beta-three.vercel.app/users/${_id}/${friendId}`,
+      `https://connect-rouge-nine.vercel.app/users/${_id}/${friendId}`,
       {
         method: "PATCH",
         headers: {

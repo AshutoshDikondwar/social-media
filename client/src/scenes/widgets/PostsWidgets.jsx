@@ -9,7 +9,7 @@ const PostsWidgets = ({ userId, isProfile = false }) => {
     const token = useSelector((state) => state.token)
 
     const getPosts = async () => {
-        const response = await fetch(`https://connect-beta-three.vercel.app/posts`, {
+        const response = await fetch(`https://connect-rouge-nine.vercel.app/posts`, {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
         })
@@ -17,7 +17,7 @@ const PostsWidgets = ({ userId, isProfile = false }) => {
         dispatch(setPosts({ posts: data }))
     }
     const getUserPosts = async () => {
-        const response = await fetch(`https://connect-beta-three.vercel.app/posts/${userId}/posts`, {
+        const response = await fetch(`https://connect-rouge-nine.vercel.app/posts/${userId}/posts`, {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
         })

@@ -66,7 +66,7 @@ const Form = () => {
         formData.append("picturePath", values.picture.name);
 
         const savedUserResponse = await fetch(
-            "https://connect-beta-three.vercel.app/auth/regester",
+            "https://connect-rouge-nine.vercel.app/auth/regester",
             {
                 method: "POST",
                 body: formData,
@@ -81,7 +81,7 @@ const Form = () => {
     };
 
     const login = async (values, onSubmitProps) => {
-        const loggedInResponse = await fetch("https://connect-beta-three.vercel.app/auth/login", {
+        const loggedInResponse = await fetch("https://connect-rouge-nine.vercel.app/auth/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(values),
