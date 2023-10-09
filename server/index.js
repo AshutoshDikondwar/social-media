@@ -16,7 +16,7 @@ import postRoutes from './routes/posts.js'
 import { verifyToken } from './middleware/auth.js'
 import User from './models/User.js'
 import Post from './models/Post.js'
-import { users, posts } from './data/index.js'
+// import { users, posts } from './data/index.js'
 
 // 
 const __filename = fileURLToPath(import.meta.url)
@@ -34,7 +34,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }))
 app.use(cors());
 app.use('/assets', express.static(path.join(__dirname, 'public/assets')))
 
-//file storage
+// //file storage
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -57,14 +57,24 @@ app.use('/posts', postRoutes)
 
 //mongoose setup
 const PORT = process.env.PORT || 6001;
+mongoose.set("strictQuery", false);
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => {
-    app.listen(PORT, () => console.log(`server  port:${PORT}`))
-
+    // app.listen(PORT, () => console.log(`server  port:${PORT}`))
+    console.log(`connected to ${PORT}`)
     // User.insertMany(users);
     // Post.insertMany(posts)
 }).catch((err) => console.log(`${err} did not connect`))
+
+if(PORT){
+
+    app.listen(PORT, () => console.log(`server  port:${PORT}`))
+}
+
+export default app;
+
+
 
 
